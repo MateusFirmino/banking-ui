@@ -36,4 +36,11 @@ export class CustomerService {
   createWithdraw(createRequest: TransactionCreateRequest): Observable<ApiResponse<TransactionCreateResponse>> {
     return this.http.post<ApiResponse<TransactionCreateResponse>>(`${baseUrl}/withdraw`, createRequest);
   }
+
+  getAllTransactionsForToday(date: string): Observable<ApiResponse<CustomerPage>> {
+    const params = {
+      date: date
+    };
+    return this.http.get<any>(`${baseUrl}/transactionsToday`, { params: params });
+  }
 }

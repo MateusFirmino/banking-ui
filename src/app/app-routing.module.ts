@@ -5,10 +5,12 @@ import { CustomerDetailsComponent } from './components/customer-details/customer
 import { AddCustomerComponent } from './components/add-customer/add-customer.component';
 import { DepositComponent } from './components/deposit/deposit.component';
 import { WithdrawComponent } from './components/withdraw/withdraw.component';
+import { SearchCustomerDateComponent } from './components/search-customer-date/search-customer-date.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'customer', pathMatch: 'full' },
   { path: 'customer', component: CustomerListComponent },
+  { path: 'reportByDate', component: SearchCustomerDateComponent },
   { path: 'customer/:accountNumber', component: CustomerDetailsComponent },
   { path: 'add', component: AddCustomerComponent },
   { path: 'deposit', component: DepositComponent },

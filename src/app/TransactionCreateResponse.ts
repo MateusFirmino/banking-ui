@@ -1,7 +1,7 @@
 export interface TransactionCreateResponse {
   id: number
   amount: number
-  date: Date
+  date: string
   accountNumber: string
   transactionType: string
 }

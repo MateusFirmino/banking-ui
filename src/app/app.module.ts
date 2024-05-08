@@ -13,6 +13,7 @@ import {MatCalendar, MatDatepickerModule} from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 import { DepositComponent } from './components/deposit/deposit.component';
 import { WithdrawComponent } from './components/withdraw/withdraw.component';
+import { SearchCustomerDateComponent } from './components/search-customer-date/search-customer-date.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { WithdrawComponent } from './components/withdraw/withdraw.component';
     CustomerListComponent,
     DepositComponent,
     WithdrawComponent,
+    SearchCustomerDateComponent,
   ],
   imports: [
     BrowserModule,

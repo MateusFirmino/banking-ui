@@ -13,17 +13,17 @@ export class AddCustomerComponent {
 
   customer: Customer = {
     name: '',
-    birthdate: new Date(),
+    birthdate: '',
     email: '',
   };
   submitted = false;
 
   customerCreateRequest: CustomerCreateRequest = {
     name: '',
-    birthdate: new Date(),
+    birthdate: '',
     email: '',
   };
-
+  
   constructor(private customerService: CustomerService) {}
 
     saveCustomer(): void {
@@ -47,7 +47,7 @@ export class AddCustomerComponent {
       this.submitted = false;
       this.customerCreateRequest = {
         name: '',
-        birthdate: new Date(),
+        birthdate: '',
         email: '',
       };
     }

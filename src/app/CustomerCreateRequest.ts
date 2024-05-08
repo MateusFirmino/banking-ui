@@ -1,5 +1,5 @@
 export interface CustomerCreateRequest {
   name: string
-  birthdate: Date
+  birthdate: string
   email: string
 }

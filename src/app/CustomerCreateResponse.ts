@@ -1,7 +1,7 @@
 export interface CustomerCreateResponse {
   id: number
   name: string
-  birthdate: Date
+  birthdate: string
   email: string
   accountNumber: string
   balance: number
