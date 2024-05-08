@@ -1,0 +1,66 @@
+<div>
+    <div class="submit-form">
+      @if (!submitted) {
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="customer.name"
+          name="name"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="birthdate">Birthdate</label>
+        <input
+          class="form-control"
+          id="birthdate"
+          required
+          [(ngModel)]="customer.birthdate"
+          name="birthdate"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          class="form-control"
+          id="email"
+          required
+          [(ngModel)]="customer.email"
+          name="email"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="balance">Balance</label>
+        <input
+          class="form-control"
+          id="balance"
+          required
+          [(ngModel)]="customer.balance"
+          name="balance"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="accountNumber">Account Number</label>
+        <input
+          class="form-control"
+          id="accountNumber"
+          required
+          [(ngModel)]="customer.accountNumber"
+          name="accountNumber"
+        />
+      </div>
+  
+      <button (click)="saveCustomer()" class="btn btn-success">Submit</button>
+      } @else {
+      <h4>Customer was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newCustomer()">Add</button>
+      }
+    </div>
+  </div>
