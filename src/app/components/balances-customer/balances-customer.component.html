@@ -1,0 +1,24 @@
+<div class="row justify-content-center align-items-center">
+    <div class="col-md-8">
+      <h4 class="text-center">Balance Customers</h4> <!-- Título centralizado -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Account Number</th>
+            <th>Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (customers of customers; track customers; let i = $index) {
+          <tr>
+            <td>{{ customers.name }}</td>
+            <td>{{ customers.accountNumber }}</td>
+            <td>{{ customers.balance | currency:'USD':'symbol':'1.2-2' }}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { DepositComponent } from './components/deposit/deposit.component';
 import { WithdrawComponent } from './components/withdraw/withdraw.component';
 import { SearchCustomerDateComponent } from './components/search-customer-date/search-customer-date.component';
+import { BalancesCustomerComponent } from './components/balances-customer/balances-customer.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { SearchCustomerDateComponent } from './components/search-customer-date/s
     DepositComponent,
     WithdrawComponent,
     SearchCustomerDateComponent,
+    BalancesCustomerComponent,
   ],
   imports: [
     BrowserModule,

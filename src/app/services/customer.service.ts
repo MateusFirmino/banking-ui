@@ -37,10 +37,11 @@ export class CustomerService {
     return this.http.post<ApiResponse<TransactionCreateResponse>>(`${baseUrl}/withdraw`, createRequest);
   }
 
-  getAllTransactionsForToday(date: string): Observable<ApiResponse<CustomerPage>> {
-    const params = {
-      date: date
-    };
-    return this.http.get<any>(`${baseUrl}/transactionsToday`, { params: params });
+  getAllTransactionsForToday(): Observable<ApiResponse<CustomerPage>> {
+    return this.http.get<ApiResponse<CustomerPage>>(`${baseUrl}/transactionsToday`);
+  }
+
+  getBalance(): Observable<ApiResponse<CustomerPage>> {
+    return this.http.get<ApiResponse<CustomerPage>>(`${baseUrl}/balances`);
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../../services/customer.service';
 import { Transaction } from '../../models/transaction.model';
 import { TransactionShow } from '../../TransactionShow';
+import { Customer } from '../../models/customer.model';
 
 @Component({
   selector: 'app-search-customer-date',
@@ -9,29 +10,21 @@ import { TransactionShow } from '../../TransactionShow';
   styleUrl: './search-customer-date.component.css'
 })
 export class SearchCustomerDateComponent implements OnInit {
-  transactions: Transaction[] = [];
-  submitted = false;
-
-  transactionShow: TransactionShow = {
-    amount: 0,
-    accountNumber: '',
-    date: '',
-    transactionType: ''
-  };
+  transaction: Transaction[] = [];
 
   constructor(private customerService: CustomerService) {}
 
   ngOnInit(): void {
-    const date = new Date().toISOString().split('T')[0]; // Obtém a data atual no formato 'yyyy-MM-dd'
-    this.loadTransactions(date);
+    this.getAllTransactionsForToday();
   }
 
-  loadTransactions(date: string): void {
-    this.customerService.getAllTransactionsForToday(date)
-      .subscribe((response: any) => {
-        this.transactions = response.data; // Ou qualquer manipulação necessária para os dados
-      }, (error) => {
-        console.error('Erro ao obter as transações:', error);
-      });
+  getAllTransactionsForToday(): void {
+    this.customerService.getAllTransactionsForToday().subscribe(response => {
+      if (response.success) {
+        this.transaction = response.data.content;
+      } else {
+        console.error('Error getting transactions:', response.message);
+      }
+    });
   }
 }
