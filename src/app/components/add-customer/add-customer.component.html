@@ -1,38 +1,22 @@
-<div>
+<div class="row justify-content-center align-items-center">
+  <div class="col-md-6">
+    <h4 class="text-center">Add New Customer</h4> <!-- Título centralizado -->
     <div class="submit-form">
       @if (!submitted) {
       <div class="form-group">
         <label for="name">Name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="name"
-          required
-          [(ngModel)]="customerCreateRequest.name"
-          name="name"
-        />
+        <input type="text" class="form-control" id="name" required [(ngModel)]="customerCreateRequest.name" name="name" />
       </div>
-  
+
       <div class="form-group">
         <label for="birthdate">Birthdate</label>
-        <input
-          class="form-control"
-          id="birthdate"
-          required
-          [(ngModel)]="customerCreateRequest.birthdate"
-          name="birthdate"
-        />
+        <input class="form-control" id="birthdate" required [(ngModel)]="customerCreateRequest.birthdate"
+          name="birthdate" />
       </div>
 
       <div class="form-group">
         <label for="email">Email</label>
-        <input
-          class="form-control"
-          id="email"
-          required
-          [(ngModel)]="customerCreateRequest.email"
-          name="email"
-        />
+        <input class="form-control" id="email" required [(ngModel)]="customerCreateRequest.email" name="email" />
       </div>
 
       <button (click)="saveCustomer()" class="btn btn-success">Submit</button>
@@ -42,3 +26,4 @@
       }
     </div>
   </div>
+</div>

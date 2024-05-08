@@ -16,8 +16,8 @@
         <tr>
           <td>{{ customer.name }}</td>
           <td>{{ customer.email }}</td>
-          <td>{{ customer.birthdate }}</td>
-          <td>{{ customer.balance }}</td>
+          <td>{{ customer.birthdate | date:'dd/MM/yyyy' }}</td>
+          <td>{{ customer.balance | currency:'USD':'symbol':'1.2-2' }}</td>
           <td>{{ customer.accountNumber }}</td>
         </tr>
         }

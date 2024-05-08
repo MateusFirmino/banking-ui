@@ -8,6 +8,12 @@ import { CustomerDetailsComponent } from './components/customer-details/customer
 import { CustomerListComponent } from './components/customer-list/customer-list.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MatCalendar, MatDatepickerModule} from '@angular/material/datepicker';
+import { MatButtonModule } from '@angular/material/button';
+import { DepositComponent } from './components/deposit/deposit.component';
+import { WithdrawComponent } from './components/withdraw/withdraw.component';
+
 
 @NgModule({
   declarations: [
@@ -15,14 +21,22 @@ import { HttpClientModule } from '@angular/common/http';
     AddCustomerComponent,
     CustomerDetailsComponent,
     CustomerListComponent,
+    DepositComponent,
+    WithdrawComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    MatDatepickerModule,
+    MatButtonModule,
+    MatCalendar
+    
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
