@@ -7,7 +7,7 @@ import { AddCustomerComponent } from './components/add-customer/add-customer.com
 const routes: Routes = [
   { path: '', redirectTo: 'customer', pathMatch: 'full' },
   { path: 'customer', component: CustomerListComponent },
-  { path: 'customer/:id', component: CustomerDetailsComponent },
+  { path: 'customer/:accountNumber', component: CustomerDetailsComponent },
   { path: 'add', component: AddCustomerComponent }
 ];
 
