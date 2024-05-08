@@ -5,6 +5,8 @@ import { ApiResponse } from '../ApiResponse';
 import { CustomerPage } from '../CustomerPage';
 import { CustomerCreateResponse } from '../CustomerCreateResponse';
 import { CustomerCreateRequest } from '../CustomerCreateRequest';
+import { TransactionCreateResponse } from '../TransactionCreateResponse';
+import { TransactionCreateRequest } from '../TransactionCreateRequest';
 
 const baseUrl = 'http://localhost:8080/banking-api/customer';
 
@@ -13,7 +15,7 @@ const baseUrl = 'http://localhost:8080/banking-api/customer';
 })
 export class CustomerService {
 
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient) { }
 
   getAllCustomers(): Observable<ApiResponse<CustomerPage>> {
     return this.http.get<ApiResponse<CustomerPage>>(`${baseUrl}`);
@@ -25,6 +27,13 @@ export class CustomerService {
 
   createCustomer(createRequest: CustomerCreateRequest): Observable<ApiResponse<CustomerCreateResponse>> {
     return this.http.post<ApiResponse<CustomerCreateResponse>>(`${baseUrl}`, createRequest);
-}
+  }
 
+  createDeposit(createRequest: TransactionCreateRequest): Observable<ApiResponse<TransactionCreateResponse>> {
+    return this.http.post<ApiResponse<TransactionCreateResponse>>(`${baseUrl}/deposit`, createRequest);
+  }
+
+  createWithdraw(createRequest: TransactionCreateRequest): Observable<ApiResponse<TransactionCreateResponse>> {
+    return this.http.post<ApiResponse<TransactionCreateResponse>>(`${baseUrl}/withdraw`, createRequest);
+  }
 }
