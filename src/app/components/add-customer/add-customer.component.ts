@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CustomerService } from '../../services/customer.service';
 import { Customer } from '../../models/customer.model';
 import { CustomerCreateResponse } from '../../CustomerCreateResponse';
+import { CustomerCreateRequest } from '../../CustomerCreateRequest';
 
 @Component({
   selector: 'app-add-customer',
@@ -14,30 +15,25 @@ export class AddCustomerComponent {
     name: '',
     birthdate: new Date(),
     email: '',
-    accountNumber: ''
   };
   submitted = false;
 
-  customerCreateResponse: CustomerCreateResponse = {
-    id: 0,
+  customerCreateRequest: CustomerCreateRequest = {
     name: '',
     birthdate: new Date(),
     email: '',
-    accountNumber: '',
-    balance: 0,
   };
 
   constructor(private customerService: CustomerService) {}
 
     saveCustomer(): void {
       const data = {
-        title: this.customer.name,
+        name: this.customer.name,
         birthdate: this.customer.birthdate,
         email: this.customer.email,
-        accountNumber: this.customer.accountNumber
       };
 
-      this.customerService.createClient(this.customerCreateResponse)
+      this.customerService.createCustomer(this.customerCreateRequest)
         .subscribe({
           next: (res) => {
             console.log(res);
@@ -49,11 +45,10 @@ export class AddCustomerComponent {
 
     newCustomer(): void {
       this.submitted = false;
-      this.customer = {
+      this.customerCreateRequest = {
         name: '',
         birthdate: new Date(),
         email: '',
-        accountNumber: ''
       };
     }
 }

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ApiResponse } from '../ApiResponse';
 import { CustomerPage } from '../CustomerPage';
 import { CustomerCreateResponse } from '../CustomerCreateResponse';
+import { CustomerCreateRequest } from '../CustomerCreateRequest';
 
 const baseUrl = 'http://localhost:8080/banking-api';
 
@@ -18,8 +19,8 @@ export class CustomerService {
     return this.http.get<ApiResponse<CustomerPage>>(`${baseUrl}/customer`);
   }
 
-  createClient(createRequest: CustomerCreateResponse): Observable<ApiResponse<CustomerCreateResponse>> {
-    return this.http.post<ApiResponse<CustomerCreateResponse>>(`${baseUrl}`, createRequest);
+  createCustomer(createRequest: CustomerCreateRequest): Observable<ApiResponse<CustomerCreateResponse>> {
+    return this.http.post<ApiResponse<CustomerCreateResponse>>(`${baseUrl}/customer`, createRequest);
 }
 
 }

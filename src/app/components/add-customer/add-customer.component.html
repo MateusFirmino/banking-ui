@@ -8,7 +8,7 @@
           class="form-control"
           id="name"
           required
-          [(ngModel)]="customer.name"
+          [(ngModel)]="customerCreateRequest.name"
           name="name"
         />
       </div>
@@ -19,7 +19,7 @@
           class="form-control"
           id="birthdate"
           required
-          [(ngModel)]="customer.birthdate"
+          [(ngModel)]="customerCreateRequest.birthdate"
           name="birthdate"
         />
       </div>
@@ -30,33 +30,11 @@
           class="form-control"
           id="email"
           required
-          [(ngModel)]="customer.email"
+          [(ngModel)]="customerCreateRequest.email"
           name="email"
         />
       </div>
 
-      <div class="form-group">
-        <label for="balance">Balance</label>
-        <input
-          class="form-control"
-          id="balance"
-          required
-          [(ngModel)]="customer.balance"
-          name="balance"
-        />
-      </div>
-
-      <div class="form-group">
-        <label for="accountNumber">Account Number</label>
-        <input
-          class="form-control"
-          id="accountNumber"
-          required
-          [(ngModel)]="customer.accountNumber"
-          name="accountNumber"
-        />
-      </div>
-  
       <button (click)="saveCustomer()" class="btn btn-success">Submit</button>
       } @else {
       <h4>Customer was submitted successfully!</h4>
